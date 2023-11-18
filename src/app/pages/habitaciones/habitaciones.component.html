@@ -17,7 +17,10 @@
                 <th scope="row"> {{i + 1}}</th>
                 <td>{{ habitacion.tipo }}</td>
                 <td>$ {{ habitacion.tarifaxhora }}</td>
-                <td>{{ habitacion.disponibilidad ? "Disponible": "Ocupada"}}</td>
+                <td *ngIf="habitacion.disponibilidad"><span style="color: green;">
+                    <strong>Disponible</strong></span></td>
+                <td *ngIf="!habitacion.disponibilidad"><span style="color: red;">
+                    <strong>Ocupado</strong></span></td>
                 <td>
                     <div class="d-flex gap-2 ">
                         <a class="btn btn-primary" (click)="reservar(habitacion.id!)"><i

@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+ backend:
+  image:  josthin21/proyectovyvback:latest
+  container_name: backend
+  depends_on:
+   - db
+  environment:
+   - DB_URL=jdbc:postgresql://db:5432/compose-postgres
+   - DB_USERNAME=compose-postgres
+   - DB_PASSWORD=compose-postgres
+   - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+  ports:
+   - "8080:8080"
+ frontend:
+  image: josthin21/proyectovyvfront:lastest
+  container_name: frontend
+  ports:
+   - "4200:80"
+  depends_on:
+   - backend
+
+ db:
+  image: postgres:13.1-alpine
+  container_name: db
+  environment:
+   - POSTGRES_USER=compose-postgres
+   - POSTGRES_PASSWORD=compose-postgres
