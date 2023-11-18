@@ -1,0 +1,36 @@
+<div class="container">
+    <button class="btn btn-primary m-2" data-bs-toggle="modal" data-bs-target="#modal-nuevoHabitacion">Agregar nuevo <i
+            class="bi bi-person-add"></i></button>
+    <br>
+    <table class="table mt-2" style="background-color: #dfdddd73;">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Tipo</th>
+                <th scope="col">Tarifa por hora</th>
+                <th scope="col">Estado</th>
+                <th scope="col">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let habitacion of Habitacions; let i = index">
+                <th scope="row"> {{i + 1}}</th>
+                <td>{{ habitacion.tipo }}</td>
+                <td>$ {{ habitacion.tarifaxhora }}</td>
+                <td>{{ habitacion.disponibilidad ? "Disponible": "Ocupada"}}</td>
+                <td>
+                    <div class="d-flex gap-2 ">
+                        <a class="btn btn-primary" (click)="reservar(habitacion.id!)"><i
+                                class="bi bi-bag-heart-fill"></i></a>
+                        <a class="btn btn-secondary" (click)="liberar(habitacion.id!)"><i
+                                class="bi bi-bag-x-fill"></i></a>
+                        <a class="btn btn-warning" (click)="obtenerHabitacionId(habitacion)"><i
+                                class="bi bi-pencil-fill"></i></a>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <app-nueva-habitacion (habitacionSave)="onHabitacionGuardado($event)"></app-nueva-habitacion>
+    <br>
+</div>

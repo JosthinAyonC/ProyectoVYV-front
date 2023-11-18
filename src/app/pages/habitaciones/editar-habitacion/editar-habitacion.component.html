@@ -1,0 +1,36 @@
+<div class="container">
+
+    <section class="d-flex align-items-center justify-content-center">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-4 flex-column align-items-center justify-content-center">
+            <div class="card mb-3">
+              <div class="card-body">
+                <legend class="text-center header">Editar usuario</legend>
+                <form (ngSubmit)="guardar()" [formGroup]="form">
+                  <div class="form-floating mb-3">
+                    <input type="text" class="form-control" formControlName="tipo" id="input-tipo"
+                    placeholder="Tipo" required />
+                    <label for="input-tipo" class="form-label">Tipo</label>
+                  </div>
+                  <div class="form-floating mb-3">
+                    <input type="text" class="form-control" formControlName="tarifaxhora" id="input-apellido"
+                    placeholder="Tarifa por hora" required />
+                    <label for="input-apellido" class="form-label">Tarifa por hora</label>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" (click)="volver()">
+                      Volver
+                    </button>
+                    <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">
+                      Guardar
+                    </button>
+                  </div>
+                </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

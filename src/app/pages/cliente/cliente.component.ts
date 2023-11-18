@@ -13,9 +13,6 @@ import { ClienteService } from 'src/app/services/cliente.service';
 export class ClienteComponent {
   clienteSeleccionado!: Cliente;
   clienteString: string = 'Esta seguro que desea eliminar este Cliente?';
-  isAdmin: boolean = false;
-  page: number = 0;
-  totalPages?: Array<number>;
   clientes: Cliente[] = [];
 
   constructor(

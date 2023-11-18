@@ -20,6 +20,9 @@ import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { ClienteComponent } from './pages/cliente/cliente.component';
 import { EditarClienteComponent } from './pages/cliente/editar-cliente/editar-cliente.component';
+import { HabitacionesComponent } from './pages/habitaciones/habitaciones.component';
+import { NuevaHabitacionComponent } from './pages/habitaciones/nueva-habitacion/nueva-habitacion.component';
+import { EditarHabitacionComponent } from './pages/habitaciones/editar-habitacion/editar-habitacion.component';
 import { NuevoClienteComponent } from './pages/cliente/nuevo-cliente/nuevo-cliente.component';
 
 
@@ -35,6 +38,9 @@ import { NuevoClienteComponent } from './pages/cliente/nuevo-cliente/nuevo-clien
     UnauthorizeComponent,
     FooterComponent,
     EditarClienteComponent,
+    HabitacionesComponent,
+    NuevaHabitacionComponent,
+    EditarHabitacionComponent,
     NuevoClienteComponent,
   ],
   imports: [

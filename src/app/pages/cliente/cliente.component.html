@@ -1,34 +1,35 @@
 <div class="container">
-    <button class="btn btn-primary m-2" data-bs-toggle="modal"
-      data-bs-target="#modal-nuevoCliente">Agregar nuevo <i class="bi bi-person-add"></i></button>
-    <br>
-    <table class="table mt-2" style="background-color: #dfdddd73;">
-      <thead>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">Cliente</th>
-          <th scope="col">Identificación</th>
-          <th scope="col">Correo</th>
-          <th scope="col" >Acciones</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let Cliente of clientes; let i = index">
-          <th scope="row">{{ (i + 1) + (page * 8) }} </th>
-          <td>{{ Cliente.nombre }} {{Cliente.apellido }}</td>
-          <td>{{ Cliente.cedula }}</td>
-          <td>{{ Cliente.email }}</td>
-          <td >
-            <div class="d-flex gap-2 ">
-              <a class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modal-confirmacion"
-                (click)="obtenerCliente(Cliente)"><i class="bi bi-trash-fill"></i></a>
-              <a class="btn btn-warning" (click)="obtenerClienteId(Cliente)"><i class="bi bi-pencil-fill"></i></a>
-            </div>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    <app-nuevo-cliente (clienteSave)="onClienteGuardado($event)"></app-nuevo-cliente>
-    <app-modal-confirm [entidadAEliminar]="clienteSeleccionado" [tipoEntidad]="clienteString" (eliminarEntidad)="delete($event)"></app-modal-confirm>
-    <br>
-  </div>
+  <button class="btn btn-primary m-2" data-bs-toggle="modal" data-bs-target="#modal-nuevoCliente">Agregar nuevo <i
+      class="bi bi-person-add"></i></button>
+  <br>
+  <table class="table mt-2" style="background-color: #dfdddd73;">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Cliente</th>
+        <th scope="col">Identificación</th>
+        <th scope="col">Correo</th>
+        <th scope="col">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let Cliente of clientes; let i = index">
+        <th scope="row"> {{i + 1}}</th>
+        <td>{{ Cliente.nombre }} {{Cliente.apellido }}</td>
+        <td>{{ Cliente.cedula }}</td>
+        <td>{{ Cliente.email }}</td>
+        <td>
+          <div class="d-flex gap-2 ">
+            <a class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modal-confirmacion"
+              (click)="obtenerCliente(Cliente)"><i class="bi bi-trash-fill"></i></a>
+            <a class="btn btn-warning" (click)="obtenerClienteId(Cliente)"><i class="bi bi-pencil-fill"></i></a>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <app-nuevo-cliente (clienteSave)="onClienteGuardado($event)"></app-nuevo-cliente>
+  <app-modal-confirm [entidadAEliminar]="clienteSeleccionado" [tipoEntidad]="clienteString"
+    (eliminarEntidad)="delete($event)"></app-modal-confirm>
+  <br>
+</div>
