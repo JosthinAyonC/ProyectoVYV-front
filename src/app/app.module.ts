@@ -18,7 +18,9 @@ import { ToastrModule } from 'ngx-toastr';
 import { ModalConfirmComponent } from './components/modal-confirm/modal-confirm.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule } from '@angular/material/datepicker';
-import { ClienteComponent } from './pages/usuario/cliente.component';
+import { ClienteComponent } from './pages/cliente/cliente.component';
+import { EditarClienteComponent } from './pages/cliente/editar-cliente/editar-cliente.component';
+import { NuevoClienteComponent } from './pages/cliente/nuevo-cliente/nuevo-cliente.component';
 
 
 @NgModule({
@@ -32,6 +34,8 @@ import { ClienteComponent } from './pages/usuario/cliente.component';
     PageNotFoundComponent,
     UnauthorizeComponent,
     FooterComponent,
+    EditarClienteComponent,
+    NuevoClienteComponent,
   ],
   imports: [
     BrowserModule,

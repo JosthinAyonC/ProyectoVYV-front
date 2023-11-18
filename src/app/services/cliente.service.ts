@@ -14,19 +14,16 @@ export class ClienteService {
   getClientes() {
     return this.http.get<Cliente[]>(`${apiUrlClientes}`);
   }
-  getCliente(id: number) {
-    return this.http.get<Cliente>(`${apiUrlClientes}/${id}`);
-  }
-  getClienteByCedula(id: String) {
-    return this.http.get<Cliente>(`${apiUrlClientes}/ci/${id}`);
+  getClienteByCed(ced: string) {
+    return this.http.get<Cliente>(`${apiUrlClientes}/cedula/${ced}`);
   }
   postCliente(Cliente: Cliente) {
     return this.http.post<Cliente>(`${apiUrlClientes}`, Cliente);
   }
-  putCliente(Cliente: Cliente, id: number) {
-    return this.http.put<Cliente>(`${apiUrlClientes}/${id}`, Cliente);
+  putCliente(Cliente: Cliente) {
+    return this.http.put<Cliente>(`${apiUrlClientes}`, Cliente);
   }
   deleteCliente(id: number) {
-    return this.http.put<Cliente>(`${apiUrlClientes}/eliminar/${id}`, null);
+    return this.http.delete<Cliente>(`${apiUrlClientes}/eliminar/${id}`);
   }
 }

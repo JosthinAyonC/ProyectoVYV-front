@@ -4,7 +4,8 @@ import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { UnauthorizeComponent } from './pages/unauthorize/unauthorize.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
-import { ClienteComponent } from './pages/usuario/cliente.component';
+import { ClienteComponent } from './pages/cliente/cliente.component';
+import { EditarClienteComponent } from './pages/cliente/editar-cliente/editar-cliente.component';
 
 
 const routes: Routes = [
@@ -24,10 +25,10 @@ const routes: Routes = [
     path: 'clientes',
     component: ClienteComponent,
   },
-  // {
-  //   path: 'cliente/editar',
-  //   component: EditarUsuarioComponent,
-  // },
+  {
+    path: 'cliente/editar',
+    component: EditarClienteComponent
+  },
   {
     path: '**',
     component: PageNotFoundComponent,

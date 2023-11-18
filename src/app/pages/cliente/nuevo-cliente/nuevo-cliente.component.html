@@ -1,0 +1,37 @@
+
+<div  class="modal fade" id="modal-nuevoCliente" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Creacion de nuevo usuario</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="container">
+            <form (ngSubmit)="guardar()" [formGroup]="form">
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control" formControlName="nombre" id="input-nombre" placeholder="Nombre" required>
+                <label for="floatingInput" >Nombre</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control" formControlName="apellido" id="input-apellido" placeholder="Apellido" required>
+                <label for="input-apellido" class="form-label">Apellido</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control" formControlName="email" id="input-apellido" placeholder="Email" required>
+                <label for="input-email" class="form-label">Email</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input type="ci" class="form-control" formControlName="cedula" id="input-cedula" placeholder="name@example.com" required>
+                <label for="input-cedula" class="form-label">Identificación:</label>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="submit" class="btn btn-primary">Guardar</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
